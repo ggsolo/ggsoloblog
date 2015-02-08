@@ -1,0 +1,11 @@
+# baseurl:
+
+markdown: rdiscount
+
+permalink: /blog/:title
+
+# duoshuo
+comments :
+    provider : duoshuo
+    duoshuo : 
+      short_name : kcblog

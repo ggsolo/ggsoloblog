@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+
+  <head>
+
+    <!-- 404 -->
+    {% if page.url == "/404.html" %}
+        <meta http-equiv="refresh" content="5; url=/">
+    {% endif %}
+
+    <!-- UJIAN -->
+    <meta name="ujianVerification" content="b697f68fa06ab09cace342797861c7d8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+    <!-- title -->
+     <title>
+       {% if page.title %}
+         {{ page.title }}
+       {% endif %}
+     </title>
+
+
+    <!-- style -->
+     <meta name="description" content="website description" />
+     <meta name="keywords" content="website keywords, website keywords" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link rel="stylesheet" type="text/css" href="/style/style.css" />
+     <link rel="stylesheet" href="/style/syntax.css" type="text/css" />
+     {% for css in page.css %}
+       <link rel="stylesheet" href="{{ css }}" type="text/css" />
+     {% endfor %}
+
+  </head>
+
+
+
+
+
+  <body>
+
+
+    <!-- header -->
+    <div id="main">
+      <div id="header">
+        <div id="logo">
+          <div id="logo_text">
+            <h1><a href="/index.html">ggsolo<span class="logo_colour"></span></a></h1>
+            <h2>For Karen</h2>
+          </div>
+        </div>
+        <div id="menubar">
+          <ul id="menu">
+            <li><a href="/index.html">Home</a></li>
+            <li class="selected"><a href="/blog.html">Blog</a></li>
+            <li><a href="/studio.html">Studio</a></li>
+            <li><a href="/contact.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+
+
+
+
+
+  <div id="content_header"></div>
+  <div id="site_content">
+
+
+      <!-- 标签 -->
+    <div id="categories">
+    <li><a href="/blog.html">全部</a></li>
+    {%for category in site.categories %}
+      <li><a href="/blog_{{category | first}}.html">{{category | first}}</a>({{category | last | size}})</li>
+    {% endfor %}
+    </div>
+
+
+
+
+    <!-- 内容 -->
+    <div id="site">
+
+
+    <!-- content -->
+    <div id="blog_content">
+      <kctitle>{{ page.title }}</kctitle>
+      <!-- <div class="date">作者:ggsolo                 发布:{{ page.date | date: "%Y-%m-%d" }}                分类:{{ page.categories }}</div> -->
+<div id="subTitle">
+
+
+      <div class="subTitleCat">分类:<a href="/blog_{{ page.categories }}.html">{{ page.categories }}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;发布：{{ page.date | date: "%Y-%m-%d" }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;评论：<span class="ds-thread-count" data-thread-key="{{ page.id }}"></span></div>
+      <!-- <div class="subTitleDate">{{ page.date | date: "%Y-%m-%d" }}</div> -->
+
+
+
+</div>
+
+<!-- <div class="clear"></div>  -->
+
+
+      {{ content }}
+
+<!-- subTitleCat -->
+
+
+<!-- <section style="width:250px;>"-->
+<!-- <section>
+        <h3>最近访客</h3>
+          <ul class="ds-recent-visitors" data-num-items="12" data-avatar-size="45" style="margin-top:10px;"></ul>
+      </section>
+
+ -->
+
+          <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{{ page.title }}" data-url="{{ post.url }}"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"kcblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+
+
+<!-- 百度统计 start -->
+<!-- 
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F1adfd7bbfc31025bde57c2e9cbaaa60d' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+ -->
+<!-- 百度统计 end -->
+
+
+
+
+
+
+<!-- UJian Button BEGIN -->
+<div class="ujian-hook"></div>
+<script type="text/javascript">var ujian_config = {num:12,picSize:84,textHeight:45};</script>
+<script type="text/javascript" src="http://v1.ujian.cc/code/ujian.js?uid=1946365"></script>
+<a href="http://www.ujian.cc" style="border:0;"><img src="http://img.ujian.cc/pixel.png" alt="友荐云推荐" style="border:0;padding:0;margin:0;" /></a>
+<!-- UJian Button END -->
+
+
+
+    </div>
+
+
+
+    <!-- relate -->
+<!--     <div id="related">
+      <relatedTitle>最近更新</relatedTitle>
+        {% for post in site.related_posts limit:3 %}
+        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </div>
+ -->
+
+<!-- </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    <!-- go to top btn -->
+    <div id="back-top">
+      <a href="#top" title="回到顶部"></a>
+    </div>
+   <script type="text/javascript">
+    $("#back-top").hide();
+    $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('#back-top').fadeIn();
+        } else {
+          $('#back-top').fadeOut();
+        } 
+      });
+      $('#back-top a').click(function () {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 800);
+        return false;
+      });
+    });
+    </script>
+
+
+    </div>
+    <!-- site end -->
+    
+
+    </div>
+    <!-- site_content end -->
+
+
+
+    <!-- footer -->
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; studio | <a href="http://www.ggsolo.com">ggsolo</a>
+    </div>
+  </div>
+
+
+
+
+
+  </body>
+</html>

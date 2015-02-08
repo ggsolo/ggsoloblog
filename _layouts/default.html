@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <!-- 404 -->
+    {% if page.url == "/404.html" %}
+        <meta http-equiv="refresh" content="5; url=/">
+    {% endif %}
+
+    <!-- style -->
+     <meta name="description" content="website description" />
+     <meta name="keywords" content="website keywords, website keywords" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+     <link rel="stylesheet" type="text/css" href="/style/style.css" />
+     <link rel="stylesheet" href="/style/syntax.css" type="text/css" />
+     {% for css in page.css %}
+       <link rel="stylesheet" href="{{ css }}" type="text/css" />
+     {% endfor %}
+
+  </head>
+
+
+
+  <body>
+
+    <div id="main">
+
+      <!-- header -->
+        <div id="header">
+          <div id="logo">
+            <div id="logo_text">
+              <h1><a href="/index.html">ggsolo<span class="logo_colour"></span></a></h1>
+              <h2>For Karen</h2>
+            </div>
+          </div>
+          <div id="menubar">
+            <ul id="menu">
+              <li><a href="index.html">Home</a></li>
+              <li class="selected"><a href="blog.html">Blog</a></li>
+              <li><a href="studio.html">Studio</a></li>
+              <li><a href="contact.html">About</a></li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+
+    <div id="content_header"></div>
+    <div id="site_content">
+
+
+    <!-- 标签 -->
+    <div id="categories">
+    <li><a href="/blog.html">全部</a></li>
+    {%for category in site.categories %}
+      <li><a href="/blog_{{category | first}}.html">{{category | first}}</a>({{category | last | size}})</li>
+    {% endfor %}
+    </div>
+
+
+    <!-- 内容 -->
+    <div id="site">
+
+      <div id="blog_content">
+        {{ content }}
+      </div>
+
+
+      <!-- go to top btn -->
+      <div id="back-top">
+        <a href="#top" title="回到顶部"></a>
+      </div>
+       <script type="text/javascript">
+        $("#back-top").hide();
+        $(document).ready(function () {
+          $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+              $('#back-top').fadeIn();
+            } else {
+              $('#back-top').fadeOut();
+            } 
+          });
+          $('#back-top a').click(function () {
+            $('body,html').animate({
+              scrollTop: 0
+            }, 800);
+            return false;
+          });
+        });
+        </script>
+
+    </div>
+    <!-- site end -->
+    
+
+    </div>
+    <!-- site_content end -->
+
+
+
+    <!-- footer -->
+    <div id="content_footer"></div>
+    <div id="footer">
+      Copyright &copy; studio | <a href="http://www.ggsolo.com">ggsolo</a>
+    </div>
+  </div>
+
+
+
+  </body>
+</html>
