@@ -1,80 +1,118 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-
-<!-- head -->
 <head>
-  <title>GGsolo</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <link rel="stylesheet" type="text/css" href="style/style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>GGsolo</title>
+<!--CSS-->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/reset.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="fonts/fonts.css" type="text/css" charset="utf-8" />
+<!--Scripts START-->
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
+<script type="text/javascript" src="js/scrolltopcontrol.js"></script>
+<script type="text/javascript" src="js/jquery.tweet.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="js/slimbox2.js"></script>
+<!-- <script type="text/javascript" src="http://cloud.github.com/downloads/malsup/cycle/jquery.cycle.all.latest.js"></script> -->
+<script type="text/javascript" src="js/jquery.validate.pack.js"></script>
+<script type="text/javascript" src="js/jquery.contacable.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript">
+<!-- Inline functions
+	$(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+-->
+</script>
+
+<!--END SCRIPTS-->
 </head>
-
-
-
-
 <body>
-  <div id="main">
-
-<!-- header -->
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">ggsolo<span class="logo_colour"></span></a></h1>
-          <h2>ggsolo.com</h2>
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="studio.html">Studio</a></li>
-          <!-- <li><a href="another_page.html">Another Page</a></li> -->
-          <li><a href="contact.html">About</a></li>
-        </ul>
-      </div>
+<!--Feedback-->
+<!-- <div id="contactable">  -->
+  <!-- contactable html placeholder --> 
+<!-- </div> -->
+<!--Wrapper START-->
+<div id="wrapper"> 
+  <!--Header START-->
+  <div id="header"> 
+    <!--Logo-->
+    <div id="logo"> <a href="index.html"><img src="images/logo.png" alt="GGsolo"/></a> </div>
+    <!--Navigation-->
+    <div class="nav-wrap">
+      <ul class="group" id="navigation">
+        <li class="current_page_item"><a href="index.html">Home</a></li>
+        <!-- <li><a href="about.html">About</a></li> -->
+        <li><a>Product</a></li>
+        <li><a>News</a></li>
+        <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
+        <!-- <li><a href="blog.html">Blog</a></li> -->
+        <!-- <li><a href="singlepost.html">Single Post</a></li> -->
+        <!-- <li><a href="contact.html">Contact</a></li> -->
+        <li><a>Contact</a></li>
+      </ul>
     </div>
-
-
-
-
-
-
-
-    <div id="content_header"></div>
-    <div id="site_content">
-
-
-
-    <!-- news -->
-      <div class="sidebar">
-        <!-- insert your sidebar items here -->
-        <h3>Latest News</h3>
-      </div>
-
-
-
-
-<!-- content -->
-      <div id="content">
-        <h1>App Store</h1>
-
-        <h1>My Blog</h1>
-
-      </div>
-    </div>
-
-
-<!-- footer -->
-    <div id="content_footer"></div>
-    <div id="footer">
-      Copyright &copy; studio | <a href="http://www.ggsolo.com">ggsolo</a>
+    <!-- <div id="searchwrapper">
+      <form action="#" method="post">
+        <p>
+          <input type="text" class="searchbox" onfocus="if(this.value == 'Type here') { this.value = ''; }" value="Type here"/>
+          <input type="image" src="images/searc-btn.png" class="searchbox_submit" value=""/>
+        </p>
+      </form>
+    </div> -->
+  </div>
+  <!--Slider-->
+  <div class="slider-wrapper theme-default">
+    <div class="ribbon"> </div>
+    <div id="slider" class="nivoSlider"> 
+    <img src="images/slider/1.png" alt="" title=""/> 
+    <img src="images/slider/2.png" alt="" title=""/> 
+    <img src="images/slider/3.png" alt="" title=""/> 
+    <img src="images/slider/4.png" alt="" title=""/> 
     </div>
   </div>
-
-
+  <!--Service Wrapper-->
+<!--   <div id="service-wrapper">
+    <div class="service-box"> <img src="images/ico1.png" alt="User Friendly" />
+      <h3>User Friendly</h3>
+      <p> Faucibus orci luctus et ultrices posuere cubilia Curae In et massa sit amet ipsum aliquam tristique sit amet </p>
+    </div>
+    <div class="service-box"> <img src="images/ico2.png" alt="Optimized Code" />
+      <h3>Optimized Code</h3>
+      <p> Curae In et massa sit amet ipsum aliquam tristique sit amet eget risus. Pellentesque habitant morbi tristiq </p>
+    </div>
+    <div class="service-box"> <img src="images/ico3.png" alt="Unique Design" />
+      <h3>Unique Design</h3>
+      <p> Massa sit amet ipsum aliquam tristique sit amet eget rissit amet ipsum aliquam tristique sit amet eget risus. Pellentesque habitant morbi lipsum dolor </p>
+    </div>
+  </div> -->
+  <!--Recent Works-->
+  <div id="recent-works">
+    <h1>HOT PRODUCT</h1>
+    <p> Hot app and games in appstore and google play </p>
+    <!-- <div class="h-seperator"> </div> -->
+    <div id="wrap">
+      <ul id="mycarousel" class="jcarousel-skin-tango">
+        <li><a href="images/products_home/1-big.png" rel="lightbox"><img src="images/products_home/1.png" alt="" /><span>&nbsp;</span></a></li>
+        <li><a href="images/products_home/2-big.png" rel="lightbox"><img src="images/products_home/2.png" alt="" /><span>&nbsp;</span></a></li>
+        <li><a href="images/products_home/3-big.png" rel="lightbox"><img src="images/products_home/3.png" alt="" /><span>&nbsp;</span></a></li>
+        <li><a href="images/products_home/4-big.png" rel="lightbox"><img src="images/products_home/4.png" alt="" /><span>&nbsp;</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <!--END WRAPPER--> 
+</div>
+<!-- <div id="footer">  -->
+  <!--Footer-->
+<!--   <div class="footer-top"></div>
+  <div id="footer-container">
+    <div class="footer-inner"> 
+  </div> -->
+<!-- </div> -->
+<!--THE END-->
+<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
